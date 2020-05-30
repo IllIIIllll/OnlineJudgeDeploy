@@ -1,3 +1,9 @@
+
+# ItWill Online Judge - Back end
+
+- 기본적으로 ItWill Online Judge - Back end는 Qingdao University의 Online Judge Server 모듈의 Docker Version을 사용합니다.
+- 현재 기존의 레거시 코드 한글 패치를 적용한 상황입니다.
+
 ## 환경 세팅
 
 ### Linux
@@ -68,11 +74,6 @@ Windows에서는 체험용으로만 제공되므로, 실제 서버를 구축하�
 만약 수정 또는 2차 개발이 필요하다면 각 모듈의 **README**를 참고하세요.
 
 수정 또는 2차 개발이 완료되면 자체 Docker 미러를 구축하고, `docker-compose.yml`을 수정하세요.
-
-## Online Judge Back end
-
-- 기본적으로 Online Judge Back end는 Qingdao University의 Online Judge Server 모듈의 Docker Version을 사용합니다.
-- 현재 기존의 레거시 코드 한글 패치를 적용한 상황입니다.
 
 ## 문제가 발생할 경우
 

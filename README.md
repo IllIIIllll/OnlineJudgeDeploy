@@ -69,6 +69,15 @@ Windows에서는 체험용으로만 제공되므로, 실제 서버를 구축하�
 
 수정 또는 2차 개발이 완료되면 자체 Docker 미러를 구축하고, `docker-compose.yml`을 수정하세요.
 
+## Online Judge Back end
+
+- 기본적으로 Online Judge Back end는 Qingdao University의 Online Judge Server 모듈의 Docker Version을 사용합니다.
+- 현재 기존의 레거시 코드 한글 패치를 적용한 상황입니다.
+
 ## 문제가 발생할 경우
 
 [이곳](http://docs.onlinejudge.me/#/onlinejudge/faq)을 참고하거나, [issue](https://github.com/QingdaoU/OnlineJudgeDeploy/issues)페이지에 작성바랍니다.
+
+
+## 오픈소스 라이센스
+[MIT](http://opensource.org/licenses/MIT)

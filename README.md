@@ -1,64 +1,74 @@
-## 环境准备
+## 환경 세팅
 
-### Linux 环境
+### Linux
 
-1. 安装必要的依赖
+1. 의존성 설치
 
     ```bash
-    sudo apt-get update && sudo apt-get install -y vim python-pip curl git
-    pip install docker-compose
+    sudo apt update && sudo apt install python3-pip
     ```
 
-2. 安装 Docker 
+2. Docker 설치
 
-    国内用户使用脚本一键安装: `sudo curl -sSL https://get.daocloud.io/docker | sh`  
-    国外用户使用脚本一键安装: `sudo curl -sSL get.docker.com | sh`
+    `sudo curl -sSL get.docker.com | sh`
     
-    详细步骤参照： [https://docs.docker.com/install/](https://docs.docker.com/install/)
+    참고： [https://docs.docker.com/install/](https://docs.docker.com/install/)
 
-### Windows 环境
+3. Docker-compose 설치
 
+    `sudo pip3 install docker-compose`
 
-Windows 下的安装仅供体验，勿在生产环境使用。如有必要，请使用虚拟机安装 Linux 并将 OJ 安装在其中。
+### Windows
 
-以下教程仅适用于 Win10 x64 下的 `PowerShell`
+Windows에서는 체험용으로만 제공되므로, 실제 서버를 구축하여 사용하려는 목적으로는 사용하지 마세요.  
+만약 꼭 필요하다면, 가상 머신을 사용하여 Linux를 설치하고 Linux에 Online Judge를 설치하시기 바랍니다.
 
-1. 安装 Windows 的 Docker 工具
-2. 右击右下角 Docker 图标，选择 Settings 进行设置
-3. 选择 `Shared Drives` 菜单，之后勾选你想安装 OJ 的盘符位置（例如勾选D盘），点击 `Apply`
-4. 输入 Windows 的账号密码进行文件共享
-5. 安装 `Python`、`pip`、`git`、`docker-compose`，安装方法自行搜索。
+아래 내용은 Windows 10 x64의 `Powershell`에서 적용됩니다.
 
-## 开始安装
+1. Windows용 Docker를 설치
+2. Docker Settings 설정 클릭
+3. `Shared Drives` 메뉴에서 Online Judge를 설치하려는 디스크(예를 들면, D드라이브)에 체크하고 `Apply` 클릭
+4. Windows의 계정 암호를 입력하여 파일 공유
+5. `Python`, `pip`, `git`, `docker-compose` 등을 설치 (설치 방법은 검색하면 많이 있습니다.)
 
-1. 请选择磁盘空间富余的位置，运行下面的命令
+## 설치
 
-    ```bash
-    git clone -b 2.0 https://github.com/QingdaoU/OnlineJudgeDeploy.git && cd OnlineJudgeDeploy
-    ```
-
-2. 启动服务
+1. Docker image 복사
 
     ```bash
-    docker-compose up -d
+    git clone -b 2.0 https://github.com/IllIIIllll/OnlineJudgeDeploy.git && cd OnlineJudgeDeploy
     ```
 
-根据网速情况，大约5到30分钟就可以自动搭建完成，全程无需人工干预。
+2. 서비스 시작
 
-等命令执行完成，然后运行 `docker ps -a`，当看到所有的容器的状态没有 `unhealthy` 或 `Exited (x) xxx` 就代表 OJ 已经启动成功。
+    ```bash
+    sudo docker-compose up -d
+    ```
 
-## 尽情享用吧
+인터넷 속도에 따라 약 5분 ~ 30분 정도면 서버 구축이 완료되며, 서버 구축에 관한 모든 과정은 관리자가 관여할 필요가 없습니다.
 
-通过浏览器访问服务器的 HTTP 80 端口或者 HTTPS 443 端口，就可以开始使用了。后台管理路径为`/admin`, 安装过程中自动添加的超级管理员用户名为 `root`，密码为 `rootroot`， **请务必及时修改密码**。
+`docker-compose` 수행이 완료되면, `sudo docker ps -a`를 실행하여 상태 표시에 `unhealthy`가 없다면 서버가 정상적으로 구축되었다고 볼 수 있습니다.
 
-不要忘记阅读文档 http://docs.onlinejudge.me/
+## 접속
 
-## 定制
+웹 브라우저를 통해 서버의 HTTP 80 포트 혹은 HTTPS 443 포트로 접속할 수 있습니다.
 
-2.0 版将一些常用设置放到了后台管理中，您可以直接登录管理后台对系统进行配置，而无需进行代码改动。
+백그라운드 관리 경로는 `/admin`이며, 최상위 관리자 계정은 `root` / `rootroot`로 설정되어 있습니다.
 
-若需要对系统进行修改或二次开发，请参照各模块的**README**，修改完成后需自行构建Docker镜像并修改`docker-compose.yml`
+**`root` 계정의 암호는 반드시 수정하시기 바랍니다.**
 
-## 遇到了问题？
+기타 Online Judge에 관련된 상세 내용은 [이곳](http://docs.onlinejudge.me/)을 참고하기기 바랍니다.
 
-请参照: [http://docs.onlinejudge.me/](http://docs.onlinejudge.me/#/onlinejudge/faq) ，如有其他问题请入群讨论或提issue。
+## 커스텀
+
+2.0 버전에서는 몇몇의 자주 쓰이는 설정을 관리자 계정으로 로그인하여 백그라운드 관리에서 설정할 수 있습니다.
+
+즉, 직접 코드를 변경할 필요는 없습니다.
+
+만약 수정 또는 2차 개발이 필요하다면 각 모듈의 **README**를 참고하세요.
+
+수정 또는 2차 개발이 완료되면 자체 Docker 미러를 구축하고, `docker-compose.yml`을 수정하세요.
+
+## 문제가 발생할 경우
+
+[이곳](http://docs.onlinejudge.me/#/onlinejudge/faq)을 참고하거나, [issue](https://github.com/QingdaoU/OnlineJudgeDeploy/issues)페이지에 작성바랍니다.

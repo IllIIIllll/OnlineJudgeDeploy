@@ -1,7 +1,7 @@
 
-# ItWill Online Judge - Back end
+# IT Will Online Judge - Back end
 
-- 기본적으로 ItWill Online Judge - Back end는 Qingdao University의 Online Judge Server 모듈의 Docker Version을 사용합니다.
+- 기본적으로 IT Will Online Judge - Back end는 Qingdao University의 Online Judge Server 모듈의 Docker Version을 사용합니다.
 - 현재 기존의 레거시 코드 한글 패치를 적용한 상황입니다.
 
 ## 환경 세팅

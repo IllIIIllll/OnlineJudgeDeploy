@@ -42,7 +42,7 @@ Windows에서는 체험용으로만 제공되므로, 실제 서버를 구축하�
 1. Docker image 복사
 
     ```bash
-    git clone -b 2.0 https://github.com/IllIIIllll/OnlineJudgeDeploy.git && cd OnlineJudgeDeploy
+    git clone -b 2.0 https://github.com/IllIIIllll/online-Judge-deploy.git && cd online-Judge-deploy
     ```
 
 2. 서비스 시작
@@ -77,7 +77,7 @@ Windows에서는 체험용으로만 제공되므로, 실제 서버를 구축하�
 
 ## 문제가 발생할 경우
 
-[이곳](http://docs.onlinejudge.me/#/onlinejudge/faq)을 참고하거나, [issue](https://github.com/QingdaoU/OnlineJudgeDeploy/issues)페이지에 작성바랍니다.
+[이곳](http://docs.onlinejudge.me/#/onlinejudge/faq)을 참고하거나, [issue](https://github.com/QingdaoU/online-Judge-deploy/issues)페이지에 작성바랍니다.
 
 
 ## 오픈소스 라이센스
